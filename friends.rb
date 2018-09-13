@@ -30,3 +30,8 @@ def add_all_money(group)
   end
   return total
 end
+
+def lend_money(lender, lendee, money)
+  lender[:monies] -= money
+  lendee[:monies] += money
+end
