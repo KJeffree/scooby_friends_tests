@@ -88,12 +88,18 @@ class TestFriends < MiniTest::Test
   def test_does_not_like_to_eat
     result = likes_to_eat(@person3, "spinach")
     assert_equal(false, result)
-  end  
+  end
   # (e.g. the function likes_to_eat(@person2, "bread") should return true, likes_to_eat(@person3, "spinach") should return false)
 
   # 4. For a given person, add a new name to their list of friends
   # (e.g. the function add_friend(@person2, "Scrappy-Doo") should add Scrappy-Doo to the friends.)
   # (hint: This function should not return anything. After the function call, check for the length of the friends array to test it!)
+  def test_add_friend
+    number_of_friends = @person2[:friends].length
+    add_friend(@person2, "Scrappy-Doo")
+    total_friends = @person2[:friends].length
+    assert_equal(number_of_friends + 1, total_friends)
+  end
 
 
   # 5. For a given person, remove a specific name from their list of friends
