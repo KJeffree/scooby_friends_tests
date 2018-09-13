@@ -22,3 +22,11 @@ end
 def remove_friend(person, named_friend)
   person[:friends].delete(named_friend)
 end
+
+def add_all_money(group)
+  total = 0
+  for person in group
+    total += person[:monies]
+  end
+  return total
+end
